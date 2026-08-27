@@ -76,10 +76,11 @@
   .fiche .eyebrow{margin-bottom:2.2rem;}
   .stats{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
     background:var(--bg-panel);
     border:1px solid var(--line);
   }
+  .stats.stats-main{grid-template-columns:repeat(6,1fr);}
+  .stats.stats-4{grid-template-columns:repeat(4,1fr);}
   .stat{
     padding:clamp(20px,3vw,34px) clamp(14px,2vw,24px);
     border-right:1px solid var(--line);
@@ -108,7 +109,6 @@
     text-transform:uppercase;
     color:var(--text-muted);
   }
-  .stats.stats-4{grid-template-columns:repeat(4,1fr);}
 
   /* ---------- GALLERY ---------- */
   .gallery{padding:clamp(64px,10vh,120px) 0;}
@@ -243,15 +243,15 @@
     .stats-4 .stat:nth-child(n+3){border-top:1px solid var(--line);}
   }
   @media (max-width:900px) and (min-width:601px){
-    .stats{grid-template-columns:repeat(3,1fr);}
-    .stat:nth-child(3){border-right:none;}
-    .stat:nth-child(n+4){border-top:1px solid var(--line);}
+    .stats.stats-main{grid-template-columns:repeat(3,1fr);}
+    .stats-main .stat:nth-child(3n){border-right:none;}
+    .stats-main .stat:nth-child(n+4){border-top:1px solid var(--line);}
     .grid{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:600px){
-    .stats{grid-template-columns:repeat(2,1fr);}
-    .stat:nth-child(2n){border-right:none;}
-    .stat:nth-child(n+3){border-top:1px solid var(--line);}
+    .stats.stats-main{grid-template-columns:repeat(2,1fr);}
+    .stats-main .stat:nth-child(2n){border-right:none;}
+    .stats-main .stat:nth-child(n+3){border-top:1px solid var(--line);}
     .grid{grid-template-columns:repeat(2,1fr);}
     .lb-prev,.lb-next{padding:8px;}
     .contact-card{grid-template-columns:1fr;}
@@ -276,9 +276,10 @@
 
 <section class="fiche wrap">
   <div class="eyebrow">Fiche technique</div>
-  <div class="stats">
+  <div class="stats stats-main">
     <div class="stat"><div class="val">46 ans</div><div class="lbl">Âge</div></div>
     <div class="stat"><div class="val">1m90</div><div class="lbl">Taille</div></div>
+    <div class="stat"><div class="val">90 kg</div><div class="lbl">Poids</div></div>
     <div class="stat"><div class="val">46</div><div class="lbl">Pointure</div></div>
     <div class="stat"><div class="val">Verts</div><div class="lbl">Yeux</div></div>
     <div class="stat"><div class="val">Brun</div><div class="lbl">Cheveux</div></div>
@@ -286,7 +287,7 @@
   <div class="stats-label">Mensurations</div>
   <div class="stats stats-4">
     <div class="stat"><div class="val">127,5 cm</div><div class="lbl">Largeur d'épaules</div></div>
-    <div class="stat"><div class="val">98 cm</div><div class="lbl">Carrure de dos</div></div>
+    <div class="stat"><div class="val">98 cm</div><div class="lbl">Tour de poitrine</div></div>
     <div class="stat"><div class="val">87 cm</div><div class="lbl">Tour de taille</div></div>
     <div class="stat"><div class="val">99 cm</div><div class="lbl">Tour de hanches</div></div>
   </div>
